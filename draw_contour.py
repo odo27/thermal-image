@@ -8,6 +8,7 @@ from matplotlib import pyplot as plt
 def contour(filename: str):
     # np array having temperature values of celcius unit
     temperature_np = extract_temperature.extract_temperature(filename)
+    
     x = np.arange(0, temperature_np.shape[1], 1)
     # prevent a image reversed
     y = np.arange(temperature_np.shape[0], 0, -1)
