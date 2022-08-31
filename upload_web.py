@@ -16,7 +16,7 @@ while True:
         else:
             path = camera_path+filename
             files = {'file':open(path, 'rb')}
-            response = requests.post("http://220.149.88.84:8080/flirupload", files=files)
+            response = requests.post("http://34.64.107.120:8080/flirupload", files=files)
             print(filename, response.text)
     
     time.sleep(100)

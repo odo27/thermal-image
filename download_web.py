@@ -4,7 +4,7 @@ import wget
 import os
 
 def drive_filelist(username: str) -> list:
-    response = requests.get("http://220.149.88.84:8080/flir/" + username)
+    response = requests.get("http://34.64.107.120:8080/flir/" + username)
     filelist = response.json()
     return filelist
 
@@ -15,7 +15,7 @@ def download_from_web(username: str, down_path: str):
         if filename in client_filelist:
             pass
         else:
-            response = wget.download("http://220.149.88.84:8080/download/admin/"+filename, './download_web/'+filename)
+            response = wget.download("http://34.64.107.120:8080/download/admin/"+filename, './download_web/'+filename)
 
 
 if __name__ == '__main__':
