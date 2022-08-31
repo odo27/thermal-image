@@ -1,5 +1,5 @@
 import sys
-import download
+import download_web
 import draw_contour
 import utils
 import cv2
@@ -56,7 +56,7 @@ class MyApp(QWidget):
         mid_layout.addWidget(self.min_result_label)
 
         bot_layout = QHBoxLayout()
-        #bot_layout.addWidget(download_push_button)
+        bot_layout.addWidget(download_push_button)
         bot_layout.addWidget(file_push_button)
         bot_layout.addWidget(contour_push_button)
 
@@ -71,7 +71,7 @@ class MyApp(QWidget):
         self.show()
     
     def download_push_button_clicked(self):
-        download.image_download()
+        download_web.download_from_web('admin', './download_web')
     
     def file_push_button_clicked(self):
         self.file_names = QFileDialog.getOpenFileNames(self, 'Open file', './')
