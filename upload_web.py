@@ -8,15 +8,16 @@ while True:
     #camera_path = 'D:/flir/'
     #camera_path = './img_mouse/'
     #camera_path = './img_hand/'
-    camera_path = '/run/user/1000/gvfs/mtp:host=FLIR_Systems_FLIR_Camera/Images/DCIM/100_FLIR'
+    camera_path = '/run/user/1000/gvfs/mtp:host=FLIR_Systems_FLIR_Camera/Images/DCIM/100_FLIR/'
     flir_camera_images = os.listdir(camera_path)
     print(flir_camera_images)
     
     result = subprocess.check_output(['sudo', 'uhubctl', '-a', 'off', '-p', '4', '-l', '1-1'])
     print(result)
+    time.sleep(5)
     result2 = subprocess.check_output(['sudo', 'uhubctl', '-a', 'on', '-p', '4', '-l', '1-1'])
     print(result2)
-    time.sleep(3)
+    time.sleep(10)
 
     
     drive_filelist = download_web.drive_filelist('admin')
