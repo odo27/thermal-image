@@ -14,7 +14,6 @@ while True:
     
     result = subprocess.check_output(['sudo', 'uhubctl', '-a', 'off', '-p', '4', '-l', '1-1'])
     print(result)
-    time.sleep(5)
     result2 = subprocess.check_output(['sudo', 'uhubctl', '-a', 'on', '-p', '4', '-l', '1-1'])
     print(result2)
     time.sleep(10)
